@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21.0.0.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.AnalyticsController"
+            prefWidth="1200" prefHeight="750"
+            style="-fx-background-color: #f4f6f9;">
+
+    <VBox spacing="15"
+          AnchorPane.topAnchor="15"
+          AnchorPane.leftAnchor="15"
+          AnchorPane.rightAnchor="15"
+          AnchorPane.bottomAnchor="15">
+
+        <!-- ================= HEADER (DATE FILTER) ================= -->
+        <HBox spacing="10"
+              style="-fx-background-color:white; -fx-padding:10; -fx-background-radius:10;
+                     -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.08),8,0,0,2);">
+
+            <Label text="📅 From:" style="-fx-font-weight:bold;"/>
+            <DatePicker fx:id="dpFrom"/>
+
+            <Label text="To:" style="-fx-font-weight:bold;"/>
+            <DatePicker fx:id="dpTo"/>
+
+            <Button text="Apply"
+                    onAction="#applyDateFilter"
+                    style="-fx-background-color:#2d89ef; -fx-text-fill:white;"/>
+
+        </HBox>
+
+        <!-- ================= TOP CARDS ================= -->
+        <HBox spacing="15">
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:250;">
+                <Label text="💰 Total Sales"/>
+                <Label fx:id="lblTotalSales" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:250;">
+                <Label text="🛒 Total Purchase"/>
+                <Label fx:id="lblTotalPurchase" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:250;">
+                <Label text="💳 Payments Received"/>
+                <Label fx:id="lblPaymentsReceived" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            </VBox>
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:250;">
+                <Label text="👥 Customer Balance"/>
+                <Label fx:id="lblCustomerBalance" style="-fx-font-size:22px; -fx-font-weight:bold;"/>
+            </VBox>
+
+        </HBox>
+
+        <!-- ================= CHARTS ================= -->
+        <HBox spacing="20">
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:350;">
+                <Label text="📊 Customers Balance"/>
+                <BarChart fx:id="chartHighBalanceCustomers" prefHeight="300">
+                    <xAxis><CategoryAxis label="Customer"/></xAxis>
+                    <yAxis><NumberAxis label="Balance"/></yAxis>
+                </BarChart>
+            </VBox>
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:350;">
+                <Label text="📦 Stock Items"/>
+                <BarChart fx:id="chartHighStockItems" prefHeight="300">
+                    <xAxis><CategoryAxis label="Item"/></xAxis>
+                    <yAxis><NumberAxis label="Stock"/></yAxis>
+                </BarChart>
+            </VBox>
+
+            <VBox style="-fx-background-color:white; -fx-padding:15; -fx-background-radius:12;
+                         -fx-effect:dropshadow(gaussian, rgba(0,0,0,0.1),10,0,0,3); -fx-min-width:350;">
+                <Label text="🏭 Suppliers Balance"/>
+                <BarChart fx:id="chartHighBalanceSuppliers" prefHeight="300">
+                    <xAxis><CategoryAxis label="Supplier"/></xAxis>
+                    <yAxis><NumberAxis label="Balance"/></yAxis>
+                </BarChart>
+            </VBox>
+
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>

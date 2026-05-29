@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.SupplierReportController"
+            style="-fx-background-color: #eef2f7;">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <left >
+        <VBox spacing="15"
+              prefWidth="180"
+              style="-fx-padding: 15;
+                     -fx-background-color: linear-gradient(to bottom, #1f2a44, #2c3e50);" alignment="TOP_CENTER">
+
+
+
+
+            <!-- SUPPLIER SEARCH -->
+            <VBox spacing="5">
+                <Label text="Supplier"
+                       style="-fx-text-fill: #dcdcdc;"/>
+
+                <TextField fx:id="txtSupplier"
+                           prefWidth="150"
+                           promptText="Search supplier"
+                           style="-fx-background-radius: 6;"/>
+            </VBox>
+
+            <!-- DATE FILTER -->
+            <VBox spacing="5">
+                <Label text="From"
+                       style="-fx-text-fill: #dcdcdc;"/>
+                <DatePicker fx:id="dpFrom" prefWidth="150"/>
+            </VBox>
+
+            <VBox spacing="5">
+                <Label text="To"
+                       style="-fx-text-fill: #dcdcdc;"/>
+                <DatePicker fx:id="dpTo" prefWidth="150"/>
+            </VBox>
+
+            <!-- BUTTON -->
+            <Button fx:id="btnFilter"
+                    text="Load Ledger"
+                    prefWidth="150"
+                    style="-fx-background-color: #2d89ef;
+                           -fx-text-fill: white;
+                           -fx-font-weight: bold;"/>
+
+            <Separator/>
+
+            <!-- SUPPLIER INFO -->
+            <VBox spacing="10">
+
+                <Label text="Supplier Info"
+                       style="-fx-text-fill: white;
+                              -fx-font-size: 14px;
+                              -fx-font-weight: bold;"/>
+
+                <VBox>
+                    <Label text="Address" style="-fx-text-fill: #aab2bd;"/>
+                    <Label fx:id="lblAddress" text="-" style="-fx-text-fill: white;"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Phone" style="-fx-text-fill: #aab2bd;"/>
+                    <Label fx:id="lblPhone" text="-" style="-fx-text-fill: white;"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Company" style="-fx-text-fill: #aab2bd;"/>
+                    <Label fx:id="lblCategory" text="-" style="-fx-text-fill: white;"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Prev Balance" style="-fx-text-fill: #aab2bd;"/>
+                    <Label fx:id="lblPrevBalance" text="0.0" style="-fx-text-fill: white;"/>
+                </VBox>
+
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER TABLE ================= -->
+    <center>
+        <VBox style="-fx-padding: 10;">
+
+            <TableView fx:id="tblLedger"
+                       VBox.vgrow="ALWAYS"
+                       style="-fx-background-color: white;
+                              -fx-border-color: #dcdcdc;
+                              -fx-background-radius: 6;">
+
+                <columns>
+
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colType" text="Type" prefWidth="100"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="140"/>
+                    <TableColumn fx:id="colDescription" text="Description" prefWidth="250"/>
+                    <TableColumn fx:id="colTotalBefore" text="Total Before" prefWidth="130"/>
+                    <TableColumn fx:id="colPayment" text="Payment" prefWidth="110"/>
+                    <TableColumn fx:id="colRemaining" text="Remaining" prefWidth="120"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

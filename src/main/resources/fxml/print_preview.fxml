@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.PrintPreviewController"
+            prefWidth="420" prefHeight="640">
+
+    <VBox spacing="8" AnchorPane.topAnchor="8" AnchorPane.leftAnchor="8" AnchorPane.rightAnchor="8" AnchorPane.bottomAnchor="8">
+        <Label text="Print Preview" style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+        <ScrollPane fx:id="scrollPreview" fitToWidth="true" prefHeight="520" style="-fx-background: white;">
+            <!-- receiptHolder will contain the Node passed from caller -->
+            <VBox fx:id="receiptHolder" style="-fx-background-color: white; -fx-padding:10; -fx-font-family: 'Noto Naskh Arabic';" />
+        </ScrollPane>
+
+        <HBox spacing="10" alignment="CENTER_RIGHT">
+            <Label fx:id="lblStatus" text="" />
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Save as PDF" fx:id="btnSavePdf"/>
+            <Button text="Print" fx:id="btnPrint"/>
+            <Button text="Close" fx:id="btnClose"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.CustomerController"
+            prefWidth="900" prefHeight="600"
+
+            style="-fx-background-color: #f5f6fa;">
+
+    <!-- ================= TOP (FORM + BUTTONS + SEARCH) ================= -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10;">
+
+            <!-- FORM -->
+            <HBox spacing="15">
+                <VBox>
+                    <Label text="Name"/>
+                    <TextField fx:id="txtName" promptText="Enter Customer Name" prefWidth="200"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Print Name"/>
+                    <TextField fx:id="txtPrintName" promptText="Enter Print Name"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Phone"/>
+                    <TextField fx:id="txtPhone" promptText="Enter Phone Number"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Address"/>
+                    <TextField fx:id="txtAddress" promptText="Enter Address"/>
+                </VBox>
+
+                <VBox>
+                    <Label text="Category"/>
+                    <ComboBox fx:id="cmbCategory" promptText="Select Category"/>
+                </VBox>
+            </HBox>
+
+            <!-- BUTTONS -->
+            <HBox spacing="15">
+                <Button fx:id="btnAdd" text="Add" styleClass="btn btn-add"/>
+                <Button fx:id="btnUpdate" text="Update" styleClass="btn btn-update"/>
+                <Button fx:id="btnDelete" text="Delete" styleClass="btn btn-delete"/>
+                <Button fx:id="btnClear" text="Clear" styleClass="btn btn-clear"/>
+            </HBox>
+            <!-- SEARCH -->
+            <HBox spacing="10">
+                <TextField fx:id="txtSearch" promptText="Search by Name..." HBox.hgrow="ALWAYS"/>
+                <ComboBox fx:id="cmbFilterCategory" promptText="Filter by Category"/>
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ================= CENTER (TABLE) ================= -->
+    <center>
+        <TableView fx:id="tblCustomers"
+
+                   VBox.vgrow="ALWAYS">
+
+            <columns>
+                <TableColumn fx:id="colId" text="ID"/>
+                <TableColumn fx:id="colName" text="Name"/>
+                <TableColumn fx:id="colPrintName" text="Print Name"/>
+                <TableColumn fx:id="colPhone" text="Phone"/>
+                <TableColumn fx:id="colAddress" text="Address"/>
+                <TableColumn fx:id="colPrevBalance" text="Prev Balance"/>
+                <TableColumn fx:id="colLastBilled" text="Last Billed"/>
+                <TableColumn fx:id="colCategory" text="Category"/>
+            </columns>
+
+        </TableView>
+    </center>
+
+</BorderPane>

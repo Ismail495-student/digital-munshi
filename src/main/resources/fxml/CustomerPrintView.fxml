@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.scene.control.*?>
+        <?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.CustomerPrintController"
+            style="-fx-background-color: #22c55e;">
+
+    <!-- ================= LEFT PANEL ================= -->
+    <left>
+        <VBox spacing="10"
+              style="-fx-padding: 12; -fx-background-color: #22c55e; -fx-pref-width: 260;">
+
+            <Label text="CUSTOMERS"
+                   style="-fx-text-fill:white; -fx-font-size:14px; -fx-font-weight:bold;"/>
+
+            <!-- SEARCH -->
+            <TextField fx:id="searchField"
+                       promptText="Search customer..."
+                       style="-fx-background-radius:8; -fx-padding:6;"/>
+
+            <!-- LIST -->
+            <ListView fx:id="tempList"
+                      prefHeight="500"
+                      style="-fx-background-radius:8;"/>
+
+            <!-- 🔥 BUTTONS MOVED UNDER LIST -->
+            <VBox spacing="8">
+
+                <Button fx:id="btnPrintSelected"
+                        text="PRINT SELECTED"
+                        style="-fx-background-color:#2980b9; -fx-text-fill:white;
+                               -fx-font-weight:bold; -fx-background-radius:8;" prefWidth="Infinity"/>
+
+
+
+            </VBox>
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER TABLE ================= -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 12;">
+            <HBox alignment="BOTTOM_RIGHT" >
+                <Button fx:id="btnPrintAll"
+                        text="PRINT ALL"
+                        style="-fx-background-color:#e67e22; -fx-text-fill:white;
+                               -fx-font-weight:bold; -fx-background-radius:8;" prefWidth="140" />
+            </HBox>
+            <HBox>
+            <Label text="SELECTED CUSTOMERS"
+                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+
+            </HBox>
+
+            <!-- 🔥 4 COLUMN TABLE -->
+            <TableView fx:id="selectedTable" VBox.vgrow="ALWAYS">
+
+                <columns>
+
+                    <TableColumn fx:id="colName"
+                                 text="Customer Name"
+                                 prefWidth="200"/>
+
+                    <TableColumn fx:id="colPhone"
+                                 text="Phone"
+                                 prefWidth="150"/>
+
+                    <TableColumn fx:id="colAddress"
+                                 text="Address"
+                                 prefWidth="200"/>
+
+                    <TableColumn fx:id="colPrevBalance"
+                                 text="Prev Balance"
+                                 prefWidth="120"/>
+
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

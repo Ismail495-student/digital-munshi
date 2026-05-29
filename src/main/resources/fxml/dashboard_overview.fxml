@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.DashboardOverviewController"
+            style="-fx-background-color: #f4f6f8;">
+
+    <!-- ================= TOP HEADER ================= -->
+    <top>
+        <VBox spacing="5"
+              style="-fx-padding: 12; -fx-background-color: #22c55e;">
+
+            <Label text="DASHBOARD OVERVIEW"
+                   style="-fx-text-fill:white; -fx-font-size:20px; -fx-font-weight:bold;"/>
+
+            <Label text="Stock &amp; Customer Risk Monitoring System"
+                   style="-fx-text-fill:#bdc3c7;"/>
+
+        </VBox>
+    </top>
+
+    <!-- ================= CENTER CONTENT ================= -->
+    <center>
+        <HBox spacing="20" style="-fx-padding: 15;">
+
+            <!-- ================= LOW STOCK ================= -->
+            <VBox spacing="10"
+                  style="-fx-background-color:white; -fx-padding:12;
+                         -fx-border-radius:10; -fx-background-radius:10;
+                         -fx-border-color:#ddd;"
+                  HBox.hgrow="ALWAYS">
+
+                <Label text="⚠ LOW STOCK ITEMS"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;
+                              -fx-text-fill:#e67e22;"/>
+
+                <TableView fx:id="tblLowStock" VBox.vgrow="ALWAYS">
+
+                    <columns>
+                        <TableColumn fx:id="colItemName"
+                                     text="Item Name"
+                                     prefWidth="320"/>
+
+                        <TableColumn fx:id="colStockQuantity"
+                                     text="Qty"
+                                     prefWidth="120"/>
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+            <!-- ================= BLACKLISTED CUSTOMERS ================= -->
+            <VBox spacing="10"
+                  style="-fx-background-color:white; -fx-padding:12;
+                         -fx-border-radius:10; -fx-background-radius:10;
+                         -fx-border-color:#ddd;"
+            >
+
+                <Label text="🚫 BLACKLISTED CUSTOMERS"
+                       style="-fx-font-size:16px; -fx-font-weight:bold;
+                              -fx-text-fill:#c0392b;"/>
+
+                <TableView fx:id="tblBlacklisted" VBox.vgrow="ALWAYS">
+
+                    <columns>
+
+                        <TableColumn fx:id="colCustomerName"
+                                     text="Customer"
+                                     prefWidth="150"/>
+
+                        <TableColumn fx:id="colCustomerPhone"
+                                     text="Phone"
+                                     prefWidth="130"/>
+
+                        <TableColumn fx:id="colLastBilled"
+                                     text="Last Billed"
+                                     prefWidth="140"/>
+
+                        <!-- 🔥 NEW COLUMN -->
+                        <TableColumn fx:id="colPrevBalance"
+                                     text="Prev Balance"
+                                     prefWidth="140"/>
+
+                    </columns>
+
+                </TableView>
+
+            </VBox>
+
+        </HBox>
+    </center>
+
+</BorderPane>

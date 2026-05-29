@@ -1,0 +1,79 @@
+.header {
+    -fx-background-color: linear-gradient(to right, #0984e3, #74b9ff);
+    -fx-padding: 10;
+}
+
+.section-title {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.action-button {
+    -fx-background-color: #00b894;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+}
+
+.logout-button {
+    -fx-background-color: #d63031;
+}
+
+.sidebar {
+    -fx-background-color: #2d3436;
+    -fx-padding: 10;
+}
+
+.sidebar-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-alignment: CENTER_LEFT;
+}
+
+.sidebar-section-label {
+    -fx-text-fill: #dfe6e9;
+    -fx-font-weight: bold;
+}
+
+.main-content {
+    -fx-background-color: #dfe6e9;
+}
+.login-pane {
+     -fx-background-image: url("background.jpg");
+     -fx-background-size: cover;      /* Makes it cover the entire pane */
+     -fx-background-position: center; /* Centers the image */
+     -fx-background-repeat: no-repeat;
+ }
+ .chart-title {
+     -fx-font-size: 16px;
+     -fx-font-weight: bold;
+ }
+
+ .chart-legend {
+     -fx-background-color: transparent;
+ }
+
+ .default-color0.chart-bar {
+     -fx-bar-fill: #4caf50; /* green */
+ }
+
+ .default-color1.chart-bar {
+     -fx-bar-fill: #ff9800; /* orange */
+ }
+
+ .default-color2.chart-bar {
+     -fx-bar-fill: #2196f3; /* blue */
+ }
+
+ .chart-plot-background {
+     -fx-background-color: #f0f0f0;
+ }
+
+ .chart-horizontal-grid-lines, .chart-vertical-grid-lines {
+     -fx-stroke: #cccccc;
+ }
+
+
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.VoucherController"
+            style="-fx-background-color: #f4f6f9;">
+
+    <!-- LEFT PANEL -->
+    <left>
+        <VBox spacing="10"
+              prefWidth="280"
+              style="-fx-padding:15; -fx-background-color:#1f2d3d;" alignment="TOP_CENTER">
+
+            <Label text="VOUCHER ENTRY"
+                   style="-fx-text-fill:white; -fx-font-size:16; -fx-font-weight:bold;"/>
+
+            <Separator/>
+
+            <ComboBox fx:id="cmbType"
+                      promptText="Select Type"
+                      prefHeight="35"/>
+
+            <TextField fx:id="txtName"
+                       promptText="Customer / Supplier Name"
+                       prefHeight="35"/>
+
+            <TextField fx:id="txtAmount"
+                       promptText="Amount"
+                       prefHeight="35"/>
+
+            <TextArea fx:id="txtDescription"
+                      promptText="Description"
+                      prefHeight="100"
+                      wrapText="true"/>
+
+            <Button fx:id="btnSave"
+                    text="SAVE VOUCHER"
+                    maxWidth="Infinity"
+                    style="-fx-background-color:#27ae60; -fx-text-fill:white;"/>
+
+            <Button fx:id="btnClear"
+                    text="CLEAR"
+                    maxWidth="Infinity"
+                    style="-fx-background-color:#7f8c8d; -fx-text-fill:white;"/>
+
+            <VBox spacing="4"
+                  style="-fx-background-color:#2c5d8a; -fx-padding:8;" alignment="BOTTOM_CENTER">
+
+                <Label text="Customer Info"
+                       style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                <Label text="Name:" style="-fx-text-fill:white;"/>
+                <Label fx:id="lblName" style="-fx-text-fill:#00e676; -fx-font-weight:bold;"/>
+
+                <Label text="Phone:" style="-fx-text-fill:white;"/>
+                <Label fx:id="lblPhone" style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                <Label text="Address:" style="-fx-text-fill:white;"/>
+                <Label fx:id="lblAddress" style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                <Label text="Balance:" style="-fx-text-fill:white;"/>
+                <Label fx:id="lblBalance" style="-fx-text-fill:#00e676; -fx-font-weight:bold;"/>
+            </VBox>
+        </VBox>
+
+    </left>
+
+    <!-- RIGHT SIDE -->
+    <center>
+        <VBox spacing="8" style="-fx-padding:10;">
+
+            <HBox spacing="10">
+                <TextField fx:id="txtSearch"
+                           promptText="Search vouchers..."
+                           HBox.hgrow="ALWAYS"/>
+            </HBox>
+
+            <TableView fx:id="tblVouchers" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="colId" text="ID"/>
+                    <TableColumn fx:id="colType" text="Type"/>
+                    <TableColumn fx:id="colName" text="Name"/>
+                    <TableColumn fx:id="colAmount" text="Amount"/>
+                    <TableColumn fx:id="colDateTime" text="Date"/>
+                    <TableColumn fx:id="colDescription" text="Description"/>
+                </columns>
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

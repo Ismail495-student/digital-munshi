@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.CustomerReportController"
+            style="-fx-background-color: #eef1f6;">
+
+    <!-- ================= LEFT SIDEBAR ================= -->
+    <left>
+        <VBox spacing="18"
+              prefWidth="200"
+              style="-fx-padding: 18;
+                     -fx-background-color: linear-gradient(to bottom, #2c3e50, #34495e);
+                     -fx-border-color: #1f2a36;
+                     -fx-border-width: 0 1 0 0;" alignment="CENTER">
+
+            <!-- SIDEBAR TITLE -->
+            <Label text="Customer Ledger"
+                   style="-fx-font-size: 18;
+                          -fx-font-weight: bold;
+                          -fx-text-fill: white;"/>
+
+            <Label text="Filters &amp; Info"
+                   style="-fx-text-fill: #bdc3c7;
+                          -fx-font-size: 12;"/>
+
+            <Separator style="-fx-opacity: 0.3;"/>
+
+            <!-- CUSTOMER SEARCH -->
+            <TextField fx:id="txtCustomer"
+                       promptText="Search Customer..."
+                       style="-fx-background-radius: 8;
+                              -fx-border-radius: 8;
+                              -fx-padding: 8;
+                              -fx-background-color: #ecf0f1;"/>
+
+            <!-- DATE RANGE -->
+            <DatePicker fx:id="dpFrom" promptText="From"/>
+            <DatePicker fx:id="dpTo" promptText="To"/>
+
+            <!-- BUTTONS -->
+            <Button fx:id="btnFilter"
+                    text="Apply Filter"
+                    prefWidth="Infinity"
+                    style="-fx-background-color: #3498db;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-padding: 8;"/>
+
+            <Button fx:id="btnPrintTop"
+                    text="Print Top"
+                    prefWidth="Infinity"
+                    style="-fx-background-color: #2ecc71;
+                           -fx-text-fill: white;
+                           -fx-background-radius: 8;
+                           -fx-padding: 8;"/>
+
+            <Separator style="-fx-opacity: 0.3;"/>
+
+            <!-- CUSTOMER INFO -->
+
+
+           <Label text="Address" style="-fx-text-fill: #ecf0f1;" />
+            <Label fx:id="lblAddress" text="-"
+                   style="-fx-text-fill:#f1c40f; -fx-font-weight: bold;"/>
+            <Label text="Phone " style="-fx-text-fill: #ecf0f1;"/>
+            <Label fx:id="lblPhone" text="-"
+                   style="-fx-text-fill: #f1c40f; -fx-font-weight: bold;"/>
+            <Label text="Category" style="-fx-text-fill:#ecf0f1 ;"/>
+            <Label fx:id="lblCategory" text=" -"
+                   style="-fx-text-fill:  #f1c40f; -fx-font-weight: bold;"/>
+            <Label text="PrevBalance" style="-fx-text-fill: #ecf0f1;"/>
+            <Label fx:id="lblPrevBalance"
+                   text="Prev Balance: 0.0"
+                   style="-fx-text-fill: #e74c3c;
+                          -fx-font-weight: bold;"/>
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER TABLE ================= -->
+    <center>
+        <VBox style="-fx-padding: 20;">
+
+            <TableView fx:id="tblLedger"
+                       style="-fx-background-color: white;
+                              -fx-background-radius: 12;
+                              -fx-border-radius: 12;
+                              -fx-border-color: #dfe6e9;
+                              -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 3);"
+                       VBox.vgrow="ALWAYS">
+
+                <columns>
+                    <TableColumn fx:id="colId" text="ID" prefWidth="60"/>
+                    <TableColumn fx:id="colType" text="Type" prefWidth="110"/>
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="140"/>
+                    <TableColumn fx:id="colDescription" text="Description" prefWidth="220"/>
+                    <TableColumn fx:id="colTotalBefore" text="Total Before" prefWidth="130"/>
+                    <TableColumn fx:id="colPayment" text="Payment" prefWidth="120"/>
+                    <TableColumn fx:id="colRemaining" text="Remaining" prefWidth="120"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

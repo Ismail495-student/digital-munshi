@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.CombineInvoicesController"
+            style="-fx-background-color: #f4f6f8;">
+
+    <!-- ================= TOP BAR ================= -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 12; -fx-background-color: #22c55e;">
+
+            <Label text="COMBINE INVOICES DASHBOARD"
+                   style="-fx-text-fill:white; -fx-font-size:18px; -fx-font-weight:bold;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label text="Invoice IDs:"
+                       style="-fx-text-fill:white;"/>
+
+                <TextField fx:id="txtInvoiceIds"
+                           promptText="e.g. 1,2,3,4"
+                           prefWidth="250"/>
+
+                <Button fx:id="btnCombine"
+                        text="COMBINE"
+                        style="-fx-background-color:#2980b9; -fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                <Button fx:id="btnPrint"
+                        text="PRINT"
+                        style="-fx-background-color:#27ae60; -fx-text-fill:white; -fx-font-weight:bold;"/>
+
+            </HBox>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label text="Range From:" style="-fx-text-fill:white;"/>
+                <TextField fx:id="txtStartInvoice" prefWidth="80"/>
+
+                <Label text="To:" style="-fx-text-fill:white;"/>
+                <TextField fx:id="txtEndInvoice" prefWidth="80"/>
+
+                <Button fx:id="btnRangePrint"
+                        text="COMBINE RANGE"
+                        style="-fx-background-color:#8e44ad; -fx-text-fill:white; -fx-font-weight:bold;"/>
+
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ================= CENTER TABLE ================= -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color:#d1fae5;">
+
+            <Label text="COMBINED ITEMS"
+                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+            <TableView fx:id="tblCombined" VBox.vgrow="ALWAYS">
+
+                <columns>
+                    <TableColumn fx:id="colItem" text="Item Name" prefWidth="400"/>
+                    <TableColumn fx:id="colCartons" text="Total Cartons" prefWidth="150"/>
+                    <TableColumn fx:id="colPieces" text="Total Pieces" prefWidth="150"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+    <!-- ================= RIGHT SUMMARY PANEL ================= -->
+    <right>
+        <VBox spacing="12"
+              style="-fx-padding: 12; -fx-background-color: #a9dfbf;
+                     -fx-pref-width: 220; -fx-border-color: #ddd;">
+
+            <Label text="SUMMARY"
+                   style="-fx-font-weight:bold; -fx-font-size:14px;"/>
+
+            <Label text="Total Cartons"/>
+            <Label fx:id="lblTotalCartons"
+                   style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:#2c3e50;"/>
+
+            <Label text="Total Pieces"/>
+            <Label fx:id="lblTotalPieces"
+                   style="-fx-font-size:16px; -fx-font-weight:bold; -fx-text-fill:#27ae60;"/>
+
+            <Separator/>
+
+
+
+        </VBox>
+    </right>
+
+</BorderPane>

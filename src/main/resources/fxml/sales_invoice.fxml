@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.SalesInvoiceController"
+            style="-fx-background-color: #f4fff7;">
+
+    <!-- ================= TOP ================= -->
+    <!-- ================= TOP ================= -->
+    <!-- ================= TOP ================= -->
+    <top>
+
+        <HBox spacing="12"
+              style="-fx-padding: 12;
+                 -fx-background-color: #22c55e ;">
+
+            <!-- LEFT SIDE INFO BLOCK -->
+            <VBox spacing="25" HBox.hgrow="ALWAYS">
+
+                <!-- ROW 1 -->
+                <HBox spacing="10">
+
+                    <Label text="Invoice ID:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblInvoiceId"
+                               editable="false"
+                               prefWidth="120"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Date:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblDateTime"
+                               editable="false"
+                               prefWidth="160"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Phone:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblPhone"
+                               editable="false"
+                               prefWidth="120"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Address:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblAddress"
+                               editable="false"
+                               prefWidth="180"
+                               style="-fx-background-radius:0;"/>
+                </HBox>
+
+                <!-- ROW 2 -->
+                <HBox spacing="10">
+
+                    <Label text="Customer:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="txtCustomer"
+                               prefWidth="200"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Category:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblCustomerCategory"
+                               editable="false"
+                               prefWidth="120"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Last:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblLastBilled"
+                               editable="false"
+                               prefWidth="120"
+                               style="-fx-background-radius:0;"/>
+
+                    <Label text="Prev Balance:"
+                           style="-fx-text-fill:white; -fx-font-weight:bold;"/>
+
+                    <TextField fx:id="lblPrevBalance"
+                               editable="false"
+                               prefWidth="120"
+                               style="-fx-background-radius:0;"/>
+                </HBox>
+
+                <!-- ROW 3 -->
+                <HBox spacing="70">
+
+                    <RadioButton fx:id="rbNetCash"
+                                 text="Net Cash"
+                                 style="-fx-text-fill:white;"/>
+
+                    <RadioButton fx:id="rbManualPayment"
+                                 text="Manual Payment"
+                                 style="-fx-text-fill:white;"/>
+
+                    <Button fx:id="btnRefresh"
+                            text="Refresh"
+                            style="-fx-background-color:#16a34a;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;"/>
+                </HBox>
+
+            </VBox>
+
+            <!-- RIGHT PANEL -->
+            <VBox fx:id="topRightPane"
+                  prefWidth="160"
+                  spacing="5"
+                  style="-fx-background-color:#0f3d2e;
+                     -fx-border-color:#16a34a;
+                     -fx-border-width:1.5;
+                     -fx-background-radius:0;
+                     -fx-border-radius:0;
+                     -fx-padding:8;"/>
+
+        </HBox>
+
+    </top>
+    <!-- ================= RIGHT PANEL ================= -->
+    <right>
+
+        <!-- MEDIUM GREEN -->
+        <VBox spacing="18"
+              alignment="TOP_CENTER"
+              style="-fx-padding:15;
+                     -fx-background-color:#a9dfbf;
+                     -fx-pref-width:260;">
+
+            <Label text="ITEMS TOTAL"
+                   style="-fx-font-weight:bold;
+                          -fx-text-fill:#145a32;"/>
+
+            <TextField fx:id="txtItemsTotal"
+                       editable="false"
+                       prefHeight="40"
+                       alignment="CENTER"
+                       style="-fx-font-size:18px;
+                              -fx-background-radius:8;"/>
+
+            <Label text="TOTAL BILL"
+                   style="-fx-font-weight:bold;
+                          -fx-text-fill:#145a32;"/>
+
+            <TextField fx:id="txtTotalBill"
+                       editable="false"
+                       prefHeight="40"
+                       alignment="CENTER"
+                       style="-fx-font-family:'Agency FB';
+                              -fx-font-size:18px;
+                              -fx-font-weight:bold;
+                              -fx-background-radius:8;" />
+
+            <Label text="PAYMENT"
+                   style="-fx-font-weight:bold;
+                          -fx-text-fill:#145a32;"/>
+
+            <TextField fx:id="txtPayment"
+                       prefHeight="40"
+                       alignment="CENTER"
+                       style="-fx-font-size:18px;
+                              -fx-background-radius:8;"/>
+
+            <Label text="REMAINING"
+                   style="-fx-font-weight:bold;
+                          -fx-text-fill:#145a32;"/>
+
+            <TextField fx:id="txtRemaining"
+                       editable="false"
+                       prefHeight="40"
+                       alignment="CENTER"
+                       style="-fx-font-family:'Agency FB';
+                              -fx-font-size:18px;
+                              -fx-font-weight:bold;
+                              -fx-background-radius:8;" />
+
+            <Separator/>
+
+            <HBox spacing="10">
+
+                <Button fx:id="btnSave"
+                        text="SAVE"
+                        prefWidth="110"
+                        style="-fx-background-color:#27ae60;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:8;"/>
+
+                <Button fx:id="btnCancel"
+                        text="CLEAR"
+                        prefWidth="110"
+                        style="-fx-background-color:#e74c3c;
+                               -fx-text-fill:white;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:8;"/>
+            </HBox>
+
+            <Separator/>
+
+        </VBox>
+    </right>
+
+    <!-- ================= CENTER ================= -->
+    <center>
+
+        <VBox spacing="10"
+              style="-fx-padding:10;
+                     -fx-background-color:#d1fae5;">
+
+            <GridPane hgap="10" vgap="6">
+
+                <Label text="PCR:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="0"
+                       style="-fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtPerCartonAmount"
+                           prefWidth="80"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="0"/>
+
+                <Label text="Item:"
+                       GridPane.columnIndex="0"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtItem"
+                           prefWidth="200"
+                           GridPane.columnIndex="1"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Rate:"
+                       GridPane.columnIndex="2"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtRate"
+                           prefWidth="80"
+                           GridPane.columnIndex="3"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Cartons:"
+                       GridPane.columnIndex="4"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtCartons"
+                           prefWidth="80"
+                           GridPane.columnIndex="5"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Pieces:"
+                       GridPane.columnIndex="6"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtPieces"
+                           prefWidth="80"
+                           GridPane.columnIndex="7"
+                           GridPane.rowIndex="1"/>
+
+                <Label text="Available:"
+                       GridPane.columnIndex="8"
+                       GridPane.rowIndex="1"
+                       style="-fx-font-weight:bold;"/>
+
+                <Label fx:id="lblAvailable"
+                       GridPane.columnIndex="9"
+                       GridPane.rowIndex="1"/>
+
+            </GridPane>
+
+            <TableView fx:id="tblLineItems" VBox.vgrow="ALWAYS">
+
+                <columns>
+                    <TableColumn fx:id="colSr" text="#" prefWidth="50"/>
+                    <TableColumn fx:id="colItemName" text="Item" prefWidth="300"/>
+                    <TableColumn fx:id="colRate" text="Rate" prefWidth="120"/>
+                    <TableColumn fx:id="colCartons" text="Cartons" prefWidth="100"/>
+                    <TableColumn fx:id="colPieces" text="Pieces" prefWidth="100"/>
+                    <TableColumn fx:id="colAmount" text="Amount" prefWidth="150"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>

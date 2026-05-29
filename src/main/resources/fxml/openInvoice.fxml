@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21.0.0"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="siks.controllers.OpenInvoiceController"
+            style="-fx-background-color: #f4f6f8;">
+
+    <!-- ================= TOP HEADER ================= -->
+    <top>
+        <VBox spacing="10" style="-fx-padding: 10; -fx-background-color: #22c55e;">
+
+            <Label text="OPEN INVOICE VIEWER"
+                   style="-fx-text-fill:white; -fx-font-size:18px; -fx-font-weight:bold;"/>
+
+            <HBox spacing="10" alignment="CENTER_LEFT">
+
+                <Label text="Invoice ID:" style="-fx-text-fill:white;"/>
+                <TextField fx:id="txtInvoiceId"
+                           promptText="SI0001 / PI0001"
+                           prefWidth="220"/>
+
+                <Button fx:id="btnSearch"
+                        text="Search"
+                        style="-fx-background-color:#0984e3; -fx-text-fill:white;"/>
+
+                <Button fx:id="btnClear"
+                        text="Clear"
+                        style="-fx-background-color:#636e72; -fx-text-fill:white;"/>
+
+            </HBox>
+
+        </VBox>
+    </top>
+
+    <!-- ================= RIGHT SUMMARY ================= -->
+    <right>
+        <VBox spacing="10"
+              style="-fx-padding: 12; -fx-background-color: white; -fx-pref-width: 250;
+                     -fx-border-color: #ddd;">
+
+            <Label text="INVOICE SUMMARY"
+                   style="-fx-font-weight:bold; -fx-font-size:14px;"/>
+
+            <Label text="Type"/>
+            <Label fx:id="lblType"
+                   style="-fx-font-weight:bold; -fx-text-fill:#e67e22;"/>
+
+            <Label fx:id="lblPartyType"/>
+            <Label fx:id="lblPartyName"
+                   style="-fx-font-weight:bold;"/>
+
+            <Label text="Date &amp; Time"/>
+            <Label fx:id="lblDateTime"/>
+
+            <Separator/>
+
+            <Label text="Items Total"/>
+            <Label fx:id="lblItemsTotal" style="-fx-font-weight:bold;"/>
+
+            <Label text="Prev Balance"/>
+            <Label fx:id="lblPrevBalance" style="-fx-font-weight:bold;"/>
+
+            <Label text="Total Bill"/>
+            <Label fx:id="lblTotalBill" style="-fx-font-weight:bold;"/>
+
+            <Label text="Payment"/>
+            <Label fx:id="lblPayment"/>
+
+            <Label text="Remaining"
+                   style="-fx-font-weight:bold; -fx-text-fill:#c0392b;"/>
+            <Label fx:id="lblRemaining" style="-fx-font-weight:bold;"/>
+
+            <Separator/>
+
+            <Button fx:id="btnPrint"
+                    text="🖨 PRINT INVOICE"
+                    style="-fx-background-color:#27ae60; -fx-text-fill:white;
+                           -fx-font-weight:bold; -fx-font-size:13px;"/>
+
+        </VBox>
+    </right>
+
+    <!-- ================= CENTER ================= -->
+    <center>
+        <VBox spacing="10" style="-fx-padding: 10;">
+
+            <Label text="Invoice Items"
+                   style="-fx-font-size:16px; -fx-font-weight:bold;"/>
+
+            <TableView fx:id="tblItems" VBox.vgrow="ALWAYS">
+
+                <columns>
+                    <TableColumn fx:id="colSr" text="Sr" prefWidth="50"/>
+                    <TableColumn fx:id="colItemName" text="Item Name" prefWidth="350"/>
+                    <TableColumn fx:id="colRate" text="Rate" prefWidth="120"/>
+                    <TableColumn fx:id="colCartons" text="Cartons" prefWidth="100"/>
+                    <TableColumn fx:id="colPieces" text="Pieces" prefWidth="100"/>
+                    <TableColumn fx:id="colAmount" text="Amount" prefWidth="150"/>
+                </columns>
+
+            </TableView>
+
+        </VBox>
+    </center>
+
+</BorderPane>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.SupplierController"
+            prefWidth="1000" prefHeight="600">
+
+    <!-- ===== FORM AREA ===== -->
+    <VBox spacing="10" AnchorPane.topAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10">
+        <GridPane hgap="10" vgap="10">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="15"/>
+                <ColumnConstraints percentWidth="35"/>
+                <ColumnConstraints percentWidth="15"/>
+                <ColumnConstraints percentWidth="35"/>
+            </columnConstraints>
+
+            <!-- Row 1 -->
+            <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+            <Label text="Print Name:" GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+            <TextField fx:id="txtPrintName" GridPane.columnIndex="3" GridPane.rowIndex="0"/>
+
+            <!-- Row 2 -->
+            <Label text="Phone:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtPhone" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            <Label text="Address:" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+            <TextField fx:id="txtAddress" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+
+            <!-- Row 3 -->
+            <Label text="Company:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+            <TextField fx:id="txtCompany" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+            <Label text="Category:" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+            <ComboBox fx:id="cbCategory" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+        </GridPane>
+
+        <!-- Buttons -->
+        <HBox spacing="15">
+            <Button fx:id="btnAdd" text="Add" prefWidth="100"/>
+            <Button fx:id="btnUpdate" text="Update" prefWidth="100"/>
+            <Button fx:id="btnDelete" text="Delete" prefWidth="100"/>
+            <Button fx:id="btnClear" text="Clear" prefWidth="100"/>
+        </HBox>
+
+        <!-- Search + Category Filter -->
+        <HBox spacing="10">
+            <Label text="Search:"/>
+            <TextField fx:id="txtSearch" HBox.hgrow="ALWAYS"/>
+            <Label text="Category Filter:"/>
+            <ComboBox fx:id="cbCategoryFilter"/>
+        </HBox>
+
+        <!-- TableView -->
+        <TableView fx:id="tblSuppliers" VBox.vgrow="ALWAYS" prefHeight="500">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="80"/>
+                <TableColumn fx:id="colName" text="Name" prefWidth="150"/>
+                <TableColumn fx:id="colPrintName" text="Print Name" prefWidth="150"/>
+                <TableColumn fx:id="colPhone" text="Phone" prefWidth="120"/>
+                <TableColumn fx:id="colAddress" text="Address" prefWidth="200"/>
+                <TableColumn fx:id="colCompany" text="Company" prefWidth="150"/>
+                <TableColumn fx:id="colCategory" text="Category" prefWidth="120"/>
+                <TableColumn fx:id="colLastBilled" text="Last Billed" prefWidth="100"/>
+                <TableColumn fx:id="colPrevBalance" text="Prev Balance" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.InvoiceTableController"
+            style="-fx-background-color: #f1f5f9;">
+
+    <!-- ================= LEFT FILTER PANEL ================= -->
+    <left>
+        <VBox spacing="20"
+              prefWidth="200"
+              style="
+                  -fx-background-color: #1f2d3d;
+                  -fx-border-color: #e2e8f0;
+                  -fx-border-width: 0 1 0 0;
+              ">
+
+            <padding>
+                <Insets top="20" right="18" bottom="20" left="18"/>
+            </padding>
+
+            <Label text="Invoice Filters"
+                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+
+            <Separator/>
+
+            <Label text="Search"
+                   style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            <TextField fx:id="txtSearch"
+                       promptText="Invoice ID or Name"
+                       prefHeight="38"
+                       style="-fx-background-radius: 8;"/>
+
+            <Label text="From Date"
+                   style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            <DatePicker fx:id="dpFrom"
+                        prefHeight="38"
+                        style="-fx-background-radius: 8;"/>
+
+            <Label text="To Date"
+                   style="-fx-text-fill: white; -fx-font-weight: bold;"/>
+            <DatePicker fx:id="dpTo"
+                        prefHeight="38"
+                        style="-fx-background-radius: 8;"/>
+            <Button text="Apply Filter"
+                    prefHeight="42"
+                    maxWidth="Infinity"
+                    style="
+                        -fx-background-color: #2563eb;
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;
+                        -fx-background-radius: 10;
+                        -fx-cursor: hand;
+                    "/>
+            <Region VBox.vgrow="ALWAYS"/>
+
+            <!-- SINGLE FILTER BUTTON -->
+
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER TABLE ================= -->
+    <center>
+        <StackPane>
+            <padding>
+                <Insets top="18" right="18" bottom="18" left="18"/>
+            </padding>
+
+            <TableView fx:id="tblInvoices"
+                       style="
+                           -fx-background-color: white;
+                           -fx-background-radius: 10;
+                           -fx-border-color: #e2e8f0;
+                           -fx-border-radius: 10;
+                       ">
+
+                <columns>
+                    <TableColumn fx:id="colId" text="Invoice ID"/>
+                    <TableColumn fx:id="colType" text="Type"/>
+                    <TableColumn fx:id="colName" text="Name" prefWidth="150" />
+                    <TableColumn fx:id="colDate" text="Date" prefWidth="100"/>
+                    <TableColumn fx:id="colTotalBill" text="Total Bill" prefWidth="130"/>
+                    <TableColumn fx:id="colPayment" text="Payment" prefWidth="130"/>
+                    <TableColumn fx:id="colRemaining" text="Remaining" prefWidth="130"/>
+                </columns>
+
+            </TableView>
+        </StackPane>
+    </center>
+
+</BorderPane>

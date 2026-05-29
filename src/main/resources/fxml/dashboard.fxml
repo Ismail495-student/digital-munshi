@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.DashboardController"
+            fx:id="mainPane">
+
+    <!-- ================= TOP ================= -->
+    <top>
+        <VBox>
+
+            <HBox spacing="12"
+                  alignment="CENTER_LEFT"
+                  style="-fx-background-color:#22c55e ; -fx-padding: 10;">
+
+                <Button fx:id="btnToggleMenu"
+                        text="☰"
+                        styleClass="app-btn"/>
+
+                <Label text="🛍 ABDUL JABBAR &amp; SONS"
+                       style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold;"/>
+
+                <Pane HBox.hgrow="ALWAYS"/>
+
+                <Button fx:id="btnSalesInvoice" text="Sales Invoice" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnPurchaseInvoice" text="Purchase Invoice" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnOpenInvoice" text="Open Invoice" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnCombo" text="Combo" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnBalance" text="Balance" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnEditInvoice" text="Edit Invoice" styleClass="app-btn"/>
+                <Separator orientation="VERTICAL" prefHeight="40"/>
+                <Button fx:id="btnLogout" text="Logout" styleClass="app-btn"/>
+
+            </HBox>
+
+            <BorderPane style="-fx-background-color: #28a745; -fx-padding: 5;">
+
+                <!-- LEFT SIDE -->
+                <left>
+                    <Label fx:id="lastInvoiceLabel"
+                           text="🧾 Last Invoice: -"
+                           style="-fx-text-fill: #0D1B2A; -fx-font-size: 13; -fx-font-weight: bold;"
+                           BorderPane.alignment="CENTER_LEFT"/>
+                </left>
+
+                <!-- CENTER (perfect center) -->
+                <center>
+                    <Label fx:id="activeSectionLabel"
+                           text="Dashboard"
+                           style="-fx-text-fill: #0D1B2A; -fx-font-size: 14; -fx-font-weight: bold;"/>
+                </center>
+                <right>
+                    <Button text="Language"
+                            fx:id="btnLanguage"
+                           />
+                </right>
+
+            </BorderPane>
+
+        </VBox>
+    </top>
+
+    <!-- ================= SIDEBAR ================= -->
+    <left>
+        <VBox fx:id="sidebar"
+              spacing="8"
+              prefWidth="120"
+              style="-fx-background-color: #2ecc71; -fx-padding: 10;"
+              alignment="TOP_CENTER">
+
+            <Label text="MENU"
+                   style="-fx-text-fill: #0D1B2A; -fx-font-weight: bold;"/>
+
+            <Separator/>
+
+            <Button fx:id="btnOverview" text="Overview" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnAnalytics" text="Analytics" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+
+            <Separator/>
+
+            <Button fx:id="btnCustomer" text="Customer" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnSupplier" text="Supplier" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnItem" text="Item" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnVoucher" text="Voucher" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnInvoice" text="Invoice" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+
+            <Separator/>
+
+            <Label text="Reports"
+                   style="-fx-text-fill: #0D1B2A;"/>
+
+            <Button fx:id="btnCustomerReport" text="Customer Report" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnSupplierReport" text="Supplier Report" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+            <Button fx:id="btnStockReport" text="Stock Report" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+
+            <Separator/>
+
+            <Button fx:id="btnSettings" text="Management" styleClass="app-btn" prefHeight="40" prefWidth="120"/>
+
+        </VBox>
+    </left>
+
+    <!-- ================= CENTER ================= -->
+    <center>
+        <StackPane fx:id="mainContent"
+                   style="-fx-background-color: #ecf0f1;">
+        </StackPane>
+    </center>
+
+</BorderPane>

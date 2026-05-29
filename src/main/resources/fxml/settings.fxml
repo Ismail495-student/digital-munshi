@@ -1,0 +1,16 @@
+
+<?import javafx.scene.layout.*?>
+<AnchorPane xmlns="http://javafx.com/javafx/21.0.0.0"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="siks.controllers.SettingsController">
+
+    <VBox fx:id="vboxSettingsRows" spacing="5" layoutX="10" layoutY="10" prefWidth="400">
+        <!-- Rows dynamically added from controller -->
+    </VBox>
+
+    <StackPane fx:id="paneSettingsContent" layoutX="420"  prefWidth="600" prefHeight="700"
+               style="-fx-background-color: #f0f0f0;">
+        <!-- Row content loads here -->
+    </StackPane>
+
+</AnchorPane>

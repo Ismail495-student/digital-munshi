@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21.0.0"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="siks.controllers.SetLanguageController"
+      spacing="15" alignment="CENTER"
+      style="-fx-padding:20; -fx-font-size:16px; -fx-font-family:'Agency FB';">
+
+    <Label text="Language Settings" style="-fx-font-size:20px; -fx-font-weight:bold;"/>
+
+    <Label fx:id="lblCurrentLang" text="Current Language: English"
+           style="-fx-text-fill:#444; -fx-font-size:16px;"/>
+
+    <Separator prefWidth="200"/>
+
+    <RadioButton text="English" fx:id="radioEnglish"/>
+    <RadioButton text="Urdu" fx:id="radioUrdu"/>
+
+    <Button text="Save Language" onAction="#saveLanguage"
+            style="-fx-background-color:#0078D7; -fx-text-fill:white; -fx-font-weight:bold; -fx-padding:6 20 6 20; -fx-background-radius:6;"/>
+
+</VBox>
